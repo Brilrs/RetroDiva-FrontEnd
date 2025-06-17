@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroDiva - Moda Retro con Estilo</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Permanent+Marker&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar Horizontal -->
+    <nav id="navbar">
+        <div class="logo">
+            <h1>Retro Diva</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#inspiration">Inspiración</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <button class="menu-button" id="menuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li class="menu-item">
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html">
+                        <i class="fas fa-history"></i>
+                        <span>Historia</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html#team">
+                        <i class="fas fa-users"></i>
+                        <span>Equipo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html#faq">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Preguntas Frecuentes</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Retro Diva</h1>
+            <p>Descubre la moda de los 80s con un toque futurista. Cada prenda es una experiencia retro que revive los mejores momentos de la década más icónica.</p>
+            <button class="cta-button">Explorar Colección</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Nuestra Colección</h2>
+        <div class="products-grid">
+            <!-- Los productos se agregarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Music Inspiration Section -->
+    <section id="inspiration" class="music-influence">
+        <h2>La Música que Inspiró Nuestra Moda</h2>
+        <div class="music-grid">
+            <!-- Los músicos se agregarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="https://www.instagram.com/retrodiva80s/"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 RetroDiva - Todos los derechos reservados</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Manejar la barra lateral
+        const menuButton = document.getElementById('menuButton');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+
+        // Cerrar la barra lateral cuando se hace clic fuera
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !menuButton.contains(e.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

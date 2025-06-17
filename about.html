@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroDiva - Nuestra Historia</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Permanent+Marker&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .about-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            color: #00ff00;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="about-section">
+        <div class="about-content">
+            <h1>Nuestra Historia</h1>
+            <p>Desde nuestros inicios en 1985, RetroDiva ha sido la voz de la moda retro más atrevida y creativa.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h2>1985</h2>
+                <p>Comienzo de nuestra aventura en la moda retro</p>
+            </div>
+            <div class="timeline-item">
+                <h2>1990</h2>
+                <p>Expansión internacional y nuevos diseños</p>
+            </div>
+            <div class="timeline-item">
+                <h2>2000</h2>
+                <p>Revitalización de la marca con nuevos estilos</p>
+            </div>
+            <div class="timeline-item">
+                <h2>2025</h2>
+                <p>Renacimiento de RetroDiva en la era digital</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Diseñadora Principal">
+                <h3>Maria García</h3>
+                <p>Diseñadora Principal</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Gerente de Marketing">
+                <h3>Juan Rodríguez</h3>
+                <p>Gerente de Marketing</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Directora Creativa">
+                <h3>Sofía Martínez</h3>
+                <p>Directora Creativa</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué estilos de los 80s inspiran vuestra colección?</div>
+                <div class="faq-answer">
+                    Nuestra colección se inspira en los estilos más icónicos de los años 80, incluyendo el glam rock, el new wave y el pop art.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué materiales usáis en vuestras prendas?</div>
+                <div class="faq-answer">
+                    Utilizamos materiales de alta calidad y sostenibles, combinando fibra sintética y natural para recrear la autenticidad de los 80s.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo se inspiran vuestros diseños en la música de los 80s?</div>
+                <div class="faq-answer">
+                    Nuestros diseños están inspirados en las estrellas de la música de los 80s, como Madonna, Prince y Cyndi Lauper, capturando su espíritu y estilo.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Manejar las preguntas frecuentes
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
