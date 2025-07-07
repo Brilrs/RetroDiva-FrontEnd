@@ -6,156 +6,220 @@
     <title>RetroDiva - Nuestra Historia</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&family=Permanent+Marker&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .about-section {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            color: #fff;
-        }
-
-        .about-content {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .timeline-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .team-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .team-member {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        .faq-section {
-            margin-top: 2rem;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .faq-question {
-            color: #00ff00;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .faq-answer {
-            padding: 1rem;
-            display: none;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-    </style>
 </head>
-<body>
-    <div class="about-section">
-        <div class="about-content">
-            <h1>Nuestra Historia</h1>
-            <p>Desde nuestros inicios en 1985, RetroDiva ha sido la voz de la moda retro más atrevida y creativa.</p>
+<body class="gradient-bg">
+    <!-- Navbar Horizontal -->
+    <nav id="navbar">
+        <div class="logo">
+            <h1>Retro Diva</h1>
         </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <h2>1985</h2>
-                <p>Comienzo de nuestra aventura en la moda retro</p>
-            </div>
-            <div class="timeline-item">
-                <h2>1990</h2>
-                <p>Expansión internacional y nuevos diseños</p>
-            </div>
-            <div class="timeline-item">
-                <h2>2000</h2>
-                <p>Revitalización de la marca con nuevos estilos</p>
-            </div>
-            <div class="timeline-item">
-                <h2>2025</h2>
-                <p>Renacimiento de RetroDiva en la era digital</p>
-            </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Historia</a></li>
+            <li><a href="about.html#team">Equipo</a></li>
+            <li><a href="faq.html">Preguntas Frecuentes</a></li>
+        </ul>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
         </div>
+        <button class="menu-button" id="menuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
 
-        <div class="team-section">
-            <div class="team-member">
-                <img src="https://via.placeholder.com/200" alt="Diseñadora Principal">
-                <h3>Maria García</h3>
-                <p>Diseñadora Principal</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/200" alt="Gerente de Marketing">
-                <h3>Juan Rodríguez</h3>
-                <p>Gerente de Marketing</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/200" alt="Directora Creativa">
-                <h3>Sofía Martínez</h3>
-                <p>Directora Creativa</p>
-            </div>
+    <!-- Barra Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li class="menu-item">
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html">
+                        <i class="fas fa-history"></i>
+                        <span>Historia</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="about.html#team">
+                        <i class="fas fa-users"></i>
+                        <span>Equipo</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="faq.html">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Preguntas Frecuentes</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-        <div class="faq-section">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué estilos de los 80s inspiran vuestra colección?</div>
-                <div class="faq-answer">
-                    Nuestra colección se inspira en los estilos más icónicos de los años 80, incluyendo el glam rock, el new wave y el pop art.
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- History Section -->
+        <section id="history" class="hero">
+            <div class="hero-content">
+                <div class="history-grid">
+                    <div class="history-text">
+                        <h1>La Magia de RetroDiva</h1>
+                        <p class="story-highlight">Todo comenzó con una canción de cassette, una chaqueta de mezclilla olvidada en el armario y una idea loca: ¿y si pudiéramos traer de vuelta la magia de los 80s, pero con un toque tecnológico?</p>
+                        
+                        <div class="history-chapter">
+                            <h2>Nuestra Misión</h2>
+                            <p>Somos más que una marca de ropa: somos una máquina del tiempo. Inspirados en la rebeldía, los colores explosivos y las frases inolvidables de los ochenta, decidimos crear prendas que no solo se vean increíbles, sino que también cuenten historias. Cada diseño lleva un pedazo de esa época dorada, combinado con tecnología interactiva que permite a nuestras clientas escanear, descubrir y revivir esos momentos icónicos.</p>
+                            <p>Nuestro sueño era simple: que cada outfit fuera una experiencia, no solo una prenda. Que cada bordado, cada estampado, y cada escaneo les recordara que la vibra de los 80s sigue viva... solo que ahora puedes llevarla puesta.</p>
+                        </div>
+
+                        <div class="history-chapter">
+                            <h2>El Viaje Hasta Aquí</h2>
+                            <p>Después de meses de soñar en grande, bocetar en servilletas y sumergirnos en el vibrante mundo de los 80s, hoy RetroDiva se ha convertido en mucho más que una idea: ¡es una comunidad en crecimiento!</p>
+                            <p>Nos encontramos en una etapa emocionante, lanzando nuestra primera colección oficial: "Neón en el Alma", una línea de prendas icónicas bordadas y estampadas, acompañadas de tecnología interactiva que transforma cada outfit en una experiencia única.</p>
+                            <p>Hemos logrado construir una plataforma que no solo muestra moda, sino que también revive emociones: desde la música que escuchabas en cassettes hasta esas frases que se quedaron grabadas para siempre.</p>
+                        </div>
+
+                        <div class="history-chapter">
+                            <h2>El Comienzo de Una Aventura</h2>
+                            <p>Así nació esta aventura: una mezcla perfecta entre nostalgia, moda y tecnología. Y apenas estamos comenzando...</p>
+                        </div>
+                    </div>
+                    <div class="history-images">
+                        <img src="img/history/history-image-1.jpg" alt="Cassette retro" class="model-image">
+                        <img src="img/history/history-image-2.jpg" alt="Chaqueta de mezclilla" class="model-image">
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué materiales usáis en vuestras prendas?</div>
-                <div class="faq-answer">
-                    Utilizamos materiales de alta calidad y sostenibles, combinando fibra sintética y natural para recrear la autenticidad de los 80s.
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="hero">
+            <div class="hero-content">
+                <div class="team-container">
+                    <div class="about-us-section">
+                        <h2>Sobre Nosotros</h2>
+                        <p>Somos un grupo de estudiantes de Ingeniería de Sistemas de Información con alma vintage y mente emprendedora. Fusionamos la lógica con el estilo para traerte una marca de ropa femenina inspirada en la vibra única de los años 80: hombreras, neón y actitud. Amamos el retro, pero no vivimos en el pasado —usamos la tecnología para que revivas lo mejor de esa época con un toque actual. ¡Bienvenida al futuro del pasado!</p>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-content">
+                                <h3>Brillite Rose Cayllahua Mendoza</h3>
+                                <p>Creativa de corazón y fan del glam ochentero. Se encarga del diseño de prendas y la identidad visual de la marca. Si ves algo con estilo, probablemente fue idea suya. Le encantan los sintetizadores... y las hojas de Excel.</p>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-content">
+                                <h3>Sulca Sedano, Jesus Ricardo</h3>
+                                <p>Apasionado por la tecnología. Se encarga del sitio web, automatizaciones y todo lo que tiene lógica (y a veces magia). Sin él, nada se mueve, ni en la web ni en el sistema.</p>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-content">
+                                <h3>Osorio Chalco, Mauricio Andree</h3>
+                                <p>El que convierte sueños en planes y números. Lidera el marketing, ventas y alianzas. Sabe exactamente cuándo lanzar un outfit... y cuándo lanzar una campaña. ¡Le pone ritmo ochentero al negocio!</p>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-content">
+                                <h3>Heredia Chavez Carlos Stephano</h3>
+                                <p>Experta en tendencias retro. Investiga, mezcla y reinventa estilos de la época para que cada prenda tenga ese flashback con estilo. ¡Su armario es un viaje en el tiempo!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="join-team-section">
+                        <h2>Únete al equipo</h2>
+                        <p>En nuestro equipo valoramos la creatividad, la pasión por lo que hacemos y la capacidad de adaptarnos a los cambios. Creemos que un buen compañero no solo aporta ideas, sino también actitud, compromiso y ganas de aprender siempre. Nos apoyamos mutuamente, combinando nuestras fortalezas para convertir una idea en algo real. Porque más que solo compañeros, somos un grupo con la misma visión y energía ochentera que queremos transmitir con cada prenda.</p>
+                        <button class="join-team-button">Enviar Solicitud</button>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Cómo se inspiran vuestros diseños en la música de los 80s?</div>
-                <div class="faq-answer">
-                    Nuestros diseños están inspirados en las estrellas de la música de los 80s, como Madonna, Prince y Cyndi Lauper, capturando su espíritu y estilo.
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="hero">
+            <div class="hero-content">
+                <div class="faq-grid">
+                    <div class="faq-answer">
+                        <h3>¿Cómo puedo unirme al equipo?</h3>
+                        <p>Si tienes pasión por la moda retro, habilidades técnicas y quieres ser parte de algo grande, ¡nos encantaría conocerte! Envíanos tu solicitud a través del botón "Enviar Solicitud" y te contactaremos para más detalles.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Qué habilidades buscan en los candidatos?</h3>
+                        <p>Buscamos personas creativas, curiosas y comprometidas. No necesitas tener experiencia previa en moda, pero sí una actitud positiva y ganas de aprender. Valoramos habilidades en diseño, programación, marketing y ventas.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Qué beneficios ofrecen?</h3>
+                        <p>Además de ser parte de una comunidad increíble, ofrecemos oportunidades de crecimiento profesional, acceso a recursos de desarrollo y la posibilidad de influir en la dirección de la marca. ¡Y, por supuesto, podrás vestir nuestras prendas retro!</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Qué es RetroDiva?</h3>
+                        <p>Somos una marca de moda retro que revive la vibra de los 80s con un toque moderno. Creemos que la moda es más que vestir, es una forma de expresión y una declaración de estilo.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Qué tipo de ropa venden?</h3>
+                        <p>Ofrecemos prendas inspiradas en los 80s, desde chaquetas de mezclilla con bordados ochenteros hasta vestidos con hombreras poderosas. Cada prenda cuenta una historia y te permite revivir los mejores momentos de la década más icónica.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Cómo puedo comprar?</h3>
+                        <p>Pronto podrás comprar nuestras prendas en nuestra tienda online. Mientras tanto, síguenos en redes sociales para mantenerte al tanto de los lanzamientos y promociones especiales.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Qué tallas ofrecen?</h3>
+                        <p>Nuestras prendas están disponibles en una amplia gama de tallas para que todas se sientan cómodas y empoderadas. Creemos en la diversidad y la inclusión, y queremos que todas puedan disfrutar de la moda retro.</p>
+                    </div>
+                    <div class="faq-answer">
+                        <h3>¿Cómo puedo contactarlos?</h3>
+                        <p>Puedes contactarnos a través de nuestras redes sociales o usar el formulario de contacto en nuestro sitio web. Estamos aquí para responder todas tus preguntas sobre la moda retro y cómo unirte a nuestra comunidad.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-
     <script>
-        // Manejar las preguntas frecuentes
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle('active');
+        // Manejar la navegación entre secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const historySection = document.getElementById('history');
+            const teamSection = document.getElementById('team');
+            
+            // Ocultar ambas secciones por defecto
+            historySection.style.display = 'block';
+            teamSection.style.display = 'none';
+
+            // Mostrar la sección correspondiente según el hash
+            function showSection(hash) {
+                if (hash === '#team') {
+                    teamSection.style.display = 'block';
+                    historySection.style.display = 'none';
+                } else {
+                    historySection.style.display = 'block';
+                    teamSection.style.display = 'none';
+                }
+            }
+
+            // Mostrar la sección correcta al cargar la página
+            showSection(window.location.hash);
+
+            // Manejar cambios en el hash
+            window.addEventListener('hashchange', function() {
+                showSection(window.location.hash);
+            });
+
+            // Manejar las preguntas frecuentes
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = question.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                });
             });
         });
     </script>

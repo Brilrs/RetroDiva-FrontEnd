@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo - Retro Diva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff00ff;
+            --secondary-color: #00ffff;
+            --background-dark: rgba(0, 0, 0, 0.9);
+            --text-light: #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #1a1a1a;
+            color: var(--text-light);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .team-section {
+            padding: 4rem 0;
+        }
+
+        .team-section h1, .team-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+        }
+
+        .about-us {
+            background: var(--background-dark);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-us p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .team-member {
+            background: var(--background-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .join-section {
+            background: var(--background-dark);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .join-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .join-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .join-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .join-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .notification {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .notification.show {
+            display: block;
+        }
+
+        footer {
+            background: #1a1a1a;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-info {
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .join-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="team-container">
+        <div class="team-section">
+            <h1>Sobre Nosotros</h1>
+            <div class="about-us">
+                <p>Somos un grupo de estudiantes de Ingeniería de Sistemas de Información con alma vintage y mente emprendedora. Fusionamos la lógica con el estilo para traerte una marca de ropa femenina inspirada en la vibra única de los años 80: hombreras, neón y actitud. Amamos el retro, pero no vivimos en el pasado —usamos la tecnología para que revivas lo mejor de esa época con un toque actual. ¡Bienvenida al futuro del pasado!</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h1>Equipo de Trabajo</h1>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="" alt="Integrante 1">
+                    <h3>Nombre 1</h3>
+                    <p>Rol 1</p>
+                    <p>Descripción breve del integrante 1</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Integrante 2">
+                    <h3>Nombre 2</h3>
+                    <p>Rol 2</p>
+                    <p>Descripción breve del integrante 2</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Integrante 3">
+                    <h3>Nombre 3</h3>
+                    <p>Rol 3</p>
+                    <p>Descripción breve del integrante 3</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Integrante 4">
+                    <h3>Nombre 4</h3>
+                    <p>Rol 4</p>
+                    <p>Descripción breve del integrante 4</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <div class="join-section">
+                <h2>Únete al Equipo</h2>
+                <p>En nuestro equipo valoramos la creatividad, la pasión por lo que hacemos y la capacidad de adaptarnos a los cambios. Creemos que un buen compañero no solo aporta ideas, sino también actitud, compromiso y ganas de aprender siempre. Nos apoyamos mutuamente, combinando nuestras fortalezas para convertir una idea en algo real. Porque más que solo compañeros, somos un grupo con la misma visión y energía ochentera que queremos transmitir con cada prenda.</p>
+                <a href="#" class="join-button" onclick="showNotification()">Enviar Solicitud</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        ¡Tu solicitud fue enviada con éxito!
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 RetroDiva - Todos los derechos reservados</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
